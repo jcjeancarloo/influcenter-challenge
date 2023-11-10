@@ -1,5 +1,13 @@
+import Card from './components/Card'
+
 function App() {
-  return <h1 className="text-3xl text-green-400">Hello world!</h1>;
+  return (
+    <main className="flex flex-col items-center justify-center h-screen w-screen">
+      <Card width="w-[500px]" height="h-[500px]">
+        <span> Some content here</span>
+      </Card>
+    </main>
+  )
 }
 
-export default App;
+export default App
