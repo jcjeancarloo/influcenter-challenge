@@ -6,7 +6,7 @@ import Wrapper from '@components/Wrapper'
 
 function App() {
   return (
-    <main className="flex flex-col justify-center items-center w-full h-screen bg-yellow-200">
+    <main className="flex flex-col justify-center items-center w-full h-screen bg-main">
       <Wrapper>
         <Header />
         <Summary />
