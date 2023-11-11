@@ -1,10 +1,13 @@
-import Wrapper from '@components/Common/Wrapper'
+import Footer from '@components/Footer'
+import Header from '@components/Header'
 import Summary from '@components/Summary'
+import Wrapper from '@components/Wrapper'
 
 function App() {
   return (
-    <main className="flex flex-row  justify-center w-full h-screen bg-yellow-200">
+    <main className="flex flex-col justify-center w-full h-screen bg-yellow-200">
       <Wrapper>
+        <Header />
         <Summary />
         <div className="bg-yellow-200 w-full h-[1024px] grid grid-cols-2">
           <div className="bg-red-300">
@@ -24,6 +27,7 @@ function App() {
             </div>
           </div>
         </div>
+        <Footer />
       </Wrapper>
     </main>
   )
