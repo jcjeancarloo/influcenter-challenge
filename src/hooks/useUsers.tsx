@@ -16,7 +16,7 @@ const useUsers = () => {
     }
   }, [setLoadingUsers, setUsers])
 
-  const countUsers = useMemo(() => users.length, [users])
+  const totalUsers = useMemo(() => users.length, [users])
 
   const parsedUsers = useMemo(() => {
     return users.map((user) => ({
@@ -29,7 +29,7 @@ const useUsers = () => {
 
   return {
     users,
-    countUsers,
+    totalUsers,
     fetchUsers,
     loadingUsers,
     parsedUsers,
