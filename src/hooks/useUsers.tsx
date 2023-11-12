@@ -6,7 +6,6 @@ const useUsers = () => {
   const { users, loadingUsers, setLoadingUsers, setUsers } = useContext(DashboardContext)
 
   const fetchUsers = useCallback(async () => {
-    console.log('Function recreated')
     try {
       setLoadingUsers(true)
       const { data } = await api.get('/users?limit=20')
@@ -19,11 +18,21 @@ const useUsers = () => {
 
   const countUsers = useMemo(() => users.length, [users])
 
+  const parsedUsers = useMemo(() => {
+    return users.map((user) => ({
+      id: user.id,
+      firstname: user.name.firstname,
+      lastname: user.name.lastname,
+      email: user.email,
+    }))
+  }, [users])
+
   return {
     users,
     countUsers,
     fetchUsers,
     loadingUsers,
+    parsedUsers,
   }
 }
 

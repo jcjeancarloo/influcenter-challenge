@@ -8,7 +8,7 @@ import useUsers from '@hooks/useUsers'
 import { useEffect } from 'react'
 
 function App() {
-  const { users, countUsers, fetchUsers } = useUsers()
+  const { countUsers, fetchUsers, parsedUsers, loadingUsers } = useUsers()
 
   useEffect(() => {
     fetchUsers()
@@ -19,7 +19,7 @@ function App() {
       <Wrapper>
         <Header />
         <Summary countUsers={countUsers} />
-        <Overview />
+        <Overview users={parsedUsers} loading={loadingUsers} />
         <Footer />
       </Wrapper>
     </main>
