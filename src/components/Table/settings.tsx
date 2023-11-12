@@ -29,9 +29,8 @@ export const userTable = [
 
 export const productTable = [
   { field: 'id', headerName: 'ID', width: 70 },
-  { field: 'title', headerName: 'Nome', width: 130 },
-  { field: 'price', headerName: 'Preço', width: 130 },
-  { field: 'category', headerName: 'Categoria', width: 130 },
-  { field: 'description', headerName: 'Descrição', width: 130 },
-  { field: 'image', headerName: 'Foto', width: 130 },
+  { field: 'title', headerName: 'Nome', width: 300 },
+  { field: 'price', headerName: 'Preço', width: 150 },
+  { field: 'category', headerName: 'Categoria', width: 200 },
+  { field: 'description', headerName: 'Descrição', width: 400, sortable: false },
 ]
