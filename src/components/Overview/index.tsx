@@ -6,7 +6,7 @@ import { Product, User } from '@shared/types'
 
 type OverviewProps = {
   users: Omit<User, 'address' | 'name'>[]
-  products?: Product[]
+  products: Product[]
   loading: boolean
 }
 
@@ -31,13 +31,13 @@ const Overview = ({ users, products, loading }: OverviewProps) => {
         <Card width="w-full" height="md:h-1/2 h-full">
           <div className="flex flex-col gap-y-4 h-full">
             <h1 className="text-2xl">Usuários</h1>
-            <Table data={users} />
+            <Table data={users} isUserTable />
           </div>
         </Card>
         <Card width="w-full" height="md:h-1/2 h-full">
           <div className="flex flex-col gap-y-4 h-full">
             <h1 className="text-2xl">Produtos</h1>
-            {/* <Table /> */}
+            <Table data={products} isUserTable={false} />
           </div>
         </Card>
       </div>

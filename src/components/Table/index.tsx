@@ -1,22 +1,16 @@
-import { DataGrid, GridColDef } from '@mui/x-data-grid'
+import { DataGrid } from '@mui/x-data-grid'
+import { productTable, style, userTable } from './settings'
 
 type TableProps = {
   data: any[]
-  headers?: string[]
+  isUserTable: boolean
 }
 
-const columns: GridColDef[] = [
-  { field: 'id', headerName: 'ID', width: 70 },
-  { field: 'firstname', headerName: 'Nome', width: 130 },
-  { field: 'lastname', headerName: 'Sobrenome', width: 130 },
-  { field: 'email', headerName: 'E-mail', width: 130 },
-]
-
-const Table = ({ data, headers }: TableProps) => {
+const Table = ({ data, isUserTable }: TableProps) => {
   return (
     <DataGrid
       rows={data}
-      columns={columns}
+      columns={isUserTable ? userTable : productTable}
       initialState={{
         pagination: {
           paginationModel: { page: 0, pageSize: 10 },
@@ -29,27 +23,7 @@ const Table = ({ data, headers }: TableProps) => {
       disableColumnFilter
       disableRowSelectionOnClick
       pageSizeOptions={[5, 10]}
-      sx={{
-        color: 'white',
-        '& .MuiSvgIcon-root': {
-          color: '#64748b',
-        },
-        '& .MuiTablePagination-root': {
-          color: '#64748b',
-        },
-        '& ::-webkit-scrollbar': {
-          width: '6px',
-        },
-        '& ::-webkit-scrollbar-track': {
-          backgroundColor: '#f5f5f5',
-        },
-        '& ::-webkit-scrollbar-thumb': {
-          borderRadius: '10px',
-          boxShadow: 'inset 0 0 6px rgba(0,0,0,.3)',
-          backgroundColor: '#d40e0e',
-        },
-        '& .MuiDataGrid-columnSeparator': { display: 'none' },
-      }}
+      sx={style}
     />
   )
 }
