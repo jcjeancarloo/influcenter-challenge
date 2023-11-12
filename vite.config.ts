@@ -7,6 +7,10 @@ export default defineConfig({
   resolve: {
     alias: {
       '@components': "/src/components",
+      '@services': "/src/services",
+      '@contexts': "/src/contexts",
+      '@hooks': "/src/hooks",
+      '@shared': "/src/shared",
     },
   },
   define: {global: 'window'}

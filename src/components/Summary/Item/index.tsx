@@ -1,7 +1,11 @@
 import Card from '@components/Common/Card'
 import { FaUser } from 'react-icons/fa'
 
-const Item = () => {
+type ItemProps = {
+  count: number
+  description: string
+}
+const Item = ({ count, description }: ItemProps) => {
   return (
     <Card width="md:w-1/4">
       <div className="flex flex-row gap-y-4 w-full gap-x-8 items-center">
@@ -9,8 +13,8 @@ const Item = () => {
           <FaUser className="text-xl md:text-4xl text-indigo-500" />
         </div>
         <div className="flex flex-col">
-          <span className="text-2xl font-semibold">R$ 25.500,00</span>
-          <span className="text-slate-500 font-bold">Today sales</span>
+          <span className="text-2xl font-semibold">{count}</span>
+          <span className="text-slate-500 font-bold">{description}</span>
         </div>
       </div>
     </Card>

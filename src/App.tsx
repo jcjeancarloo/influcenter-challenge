@@ -3,21 +3,26 @@ import Header from '@components/Header'
 import Overview from '@components/Overview'
 import Summary from '@components/Summary'
 import Wrapper from '@components/Wrapper'
+import useUsers from '@hooks/useUsers'
 
-import { DashboardContextProvider } from './context/dashboard-context'
+import { useEffect } from 'react'
 
 function App() {
+  const { users, countUsers, fetchUsers } = useUsers()
+
+  useEffect(() => {
+    fetchUsers()
+  }, [fetchUsers])
+
   return (
-    <DashboardContextProvider>
-      <main className="flex flex-col justify-center items-center w-full h-screen bg-main font-nunito">
-        <Wrapper>
-          <Header />
-          <Summary />
-          <Overview />
-          <Footer />
-        </Wrapper>
-      </main>
-    </DashboardContextProvider>
+    <main className="flex flex-col justify-center items-center w-full h-screen bg-main font-nunito">
+      <Wrapper>
+        <Header />
+        <Summary countUsers={countUsers} />
+        <Overview />
+        <Footer />
+      </Wrapper>
+    </main>
   )
 }
 

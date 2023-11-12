@@ -2,6 +2,12 @@ import Area from '@components/Charts/Area'
 import Donut from '@components/Charts/Donut'
 import Card from '@components/Common/Card'
 import Table from '@components/Table'
+import { Product, User } from '@shared/types'
+
+type OverviewProps = {
+  users: User[]
+  products?: Product[]
+}
 
 const donutData = { series: [44, 55, 41, 17, 15] }
 const areaData = {
@@ -17,14 +23,14 @@ const areaData = {
   ],
 }
 
-const Overview = () => {
+const Overview = ({ users, products }: OverviewProps) => {
   return (
     <div className="w-full h-[1024px] flex flex-col md:flex-row gap-x-4 gap-y-4">
       <div className="h-full flex flex-col gap-y-4 md:w-[70%] w-full">
         <Card width="w-full" height="md:h-1/2 h-full">
           <div className="flex flex-col gap-y-4 h-full">
             <h1 className="text-2xl">Produtos</h1>
-            <Table />
+            <Table data={users} />
           </div>
         </Card>
         <Card width="w-full" height="md:h-1/2 h-full">

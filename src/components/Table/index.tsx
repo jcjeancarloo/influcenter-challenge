@@ -1,5 +1,10 @@
 import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid'
 
+type TableProps = {
+  data: any[]
+  headers: string[]
+}
+
 const columns: GridColDef[] = [
   { field: 'id', headerName: 'ID', width: 70 },
   { field: 'firstName', headerName: 'First name', width: 130 },
@@ -33,7 +38,7 @@ const rows = [
   { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
 ]
 
-const Table = () => {
+const Table = ({ data, headers }: TableProps) => {
   return (
     <DataGrid
       rows={rows}

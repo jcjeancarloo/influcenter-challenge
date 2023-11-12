@@ -1,10 +1,14 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
-import "./index.css";
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App.tsx'
+import './index.css'
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+import { DashboardContextProvider } from './contexts/dashboard-context'
+
+ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App />
+    <DashboardContextProvider>
+      <App />
+    </DashboardContextProvider>
   </React.StrictMode>
-);
+)
