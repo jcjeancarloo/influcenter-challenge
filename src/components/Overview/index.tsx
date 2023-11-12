@@ -1,13 +1,14 @@
 import Card from '@components/Common/Card'
+import Donut from '../Charts/Donut'
 
+const donutData  = { series: [44, 55, 41, 17, 15] }
+  
 const Overview = () => {
   return (
     <div className="w-full h-[1024px] flex flex-col md:flex-row gap-x-4 gap-y-4">
       <div className="h-full flex flex-col gap-y-4 md:w-[70%] w-full">
-        <Card height="h-1/2">
-          <div className="bg-purple-400 w-full">
-            <h1>Grafico 1</h1>
-          </div>
+        <Card width="w-full" height="h-1/2">
+
         </Card>
         <Card height="h-1/2">
           <div className="bg-green-200 w-full">
@@ -22,9 +23,8 @@ const Overview = () => {
           </div>
         </Card>
         <Card height="h-1/2">
-          <div className="bg-blue-300 w-full">
-            <h1>Grafico 4</h1>
-          </div>
+          <h1 className='text-2xl'>Grafico 1</h1>
+          <Donut data={donutData}/>
         </Card>
       </div>
     </div>
