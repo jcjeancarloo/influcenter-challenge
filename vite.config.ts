@@ -9,4 +9,5 @@ export default defineConfig({
       '@components': "/src/components",
     },
   },
+  define: {global: 'window'}
 })
