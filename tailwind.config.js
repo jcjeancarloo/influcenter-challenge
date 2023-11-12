@@ -7,6 +7,10 @@ export default {
         card: '#2a2d3e',
         main: '#212332',
       },
+      fontFamily: {
+        'league-spartan': ['League Spartan', 'sans-serif'],
+        nunito: ['Nunito', 'sans-serif'],
+      },
     },
   },
   plugins: [],
