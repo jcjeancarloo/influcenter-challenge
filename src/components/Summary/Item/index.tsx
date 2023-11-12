@@ -9,9 +9,9 @@ type ItemProps = {
 const Item = ({ count, description, color, children }: ItemProps) => {
   const colors = {
     indigo: 'border-indigo-700',
-    orange: 'border-orange-700',
+    yellow: 'border-yellow-700',
     red: 'border-red-700',
-    green: 'border-green-700',
+    emerald: 'border-emerald-700',
   }
   return (
     <Card width="md:w-1/4">

@@ -3,25 +3,36 @@ import { api } from '@services/fake-store-api'
 import { useCallback, useContext, useMemo } from 'react'
 
 const useProducts = () => {
-  const { products, setProducts } = useContext(DashboardContext)
+  const { products, categories, setProducts, setCategories } = useContext(DashboardContext)
 
-  const fetchProducts = useCallback(async () => {
+  const fetchProductAndCategories = useCallback(async () => {
     try {
-      // setLoadingUsers(true)
-      const { data } = await api.get('/products?limit=20')
-      setProducts(data)
-      // setLoadingUsers(false)
+      const fetchCategories = async () => {
+        const { data } = await api.get('/products/categories')
+        return data
+      }
+
+      const fetchProducts = async () => {
+        const { data } = await api.get('/products?limit=20')
+        return data
+      }
+      const [categories, products] = await Promise.all([fetchCategories(), fetchProducts()])
+
+      setCategories(categories)
+      setProducts(products)
     } catch (error) {
-      console.log(error)
+      console.error('Erro ao buscar dados:', error)
     }
-  }, [setProducts])
+  }, [setCategories, setProducts])
 
   const totalProducts = useMemo(() => products.length, [products])
+  const totalCategories = useMemo(() => categories.length, [categories])
 
   return {
     products,
+    totalCategories,
     totalProducts,
-    fetchProducts,
+    fetchProductAndCategories,
   }
 }
 

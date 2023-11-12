@@ -9,18 +9,22 @@ import { useEffect } from 'react'
 
 function App() {
   const { totalUsers, fetchUsers, parsedUsers, loadingUsers } = useUsers()
-  const { products, totalProducts, fetchProducts } = useProducts()
+  const { products, totalProducts, totalCategories, fetchProductAndCategories } = useProducts()
 
   useEffect(() => {
     fetchUsers()
-    fetchProducts()
-  }, [fetchUsers, fetchProducts])
+    fetchProductAndCategories()
+  }, [fetchUsers, fetchProductAndCategories])
 
   return (
     <main className="flex flex-col justify-center items-center w-full h-screen bg-main font-nunito">
       <Wrapper>
         <Header />
-        <Summary totalUsers={totalUsers} totalProducts={totalProducts} />
+        <Summary
+          totalUsers={totalUsers}
+          totalProducts={totalProducts}
+          totalCategories={totalCategories}
+        />
         <Overview users={parsedUsers} products={products} loading={loadingUsers} />
         <Footer />
       </Wrapper>
