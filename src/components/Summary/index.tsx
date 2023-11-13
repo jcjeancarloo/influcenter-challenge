@@ -9,10 +9,10 @@ type SummaryProps = {
 const Summary = ({ totalUsers, totalProducts, totalCategories }: SummaryProps) => {
   return (
     <div className="flex flex-col gap-4 md:flex-row w-full">
-      <Item count={totalUsers} description="Current users on platform" color="indigo">
+      <Item count={totalUsers} description="Usuários" color="indigo">
         <FaUser className="text-xl md:text-4xl text-indigo-500" />
       </Item>
-      <Item count={totalProducts} description="Current products on platform" color="red">
+      <Item count={totalProducts} description="Produtos" color="red">
         <FaShoppingBasket className="text-xl md:text-4xl text-red-500" />
       </Item>
       <Item count={totalCategories} description="Categories" color="emerald">

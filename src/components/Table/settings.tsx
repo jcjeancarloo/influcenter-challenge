@@ -13,6 +13,7 @@ export const style = {
   },
   '& ::-webkit-scrollbar': {
     width: '6px',
+    height: '6px',
   },
   '& ::-webkit-scrollbar-track': {
     backgroundColor: '#333646',
