@@ -3,7 +3,7 @@ import UserPlaceholder from '@assets/user-placeholder.png'
 
 const Header = () => {
   return (
-    <header className="w-full flex flex-row items-center pt-4">
+    <header className="w-full flex flex-row items-center pt-8 -mb-4">
       <div className="w-[55%] flex flex-row justify-end">
         <img src={InflucenterLogo} className="w-[250px]" />
       </div>
