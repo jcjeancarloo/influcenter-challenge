@@ -1,5 +1,8 @@
 import NoData from '@components/Common/NoData'
 import Chart from 'react-apexcharts'
+import { useTranslation } from 'react-i18next'
+
+import Title from '@components/Common/Title'
 
 type DonutProps = {
   data: any
@@ -8,7 +11,7 @@ type DonutProps = {
 const settings = {
   options: {
     dataLabels: {
-      enabled: false,
+      enabled: true,
     },
     legend: {
       position: 'bottom' as const,
@@ -35,8 +38,8 @@ const settings = {
               color: 'white',
             },
             total: {
-              show: true,
-              showAlways: true,
+              show: false,
+              showAlways: false,
               color: 'white',
             },
           },
@@ -50,14 +53,24 @@ const settings = {
 }
 
 const Donut = ({ data }: DonutProps) => {
-  return data.length ? (
-    <Chart
-      options={settings.options}
-      series={data.series}
-      type="donut"
-      width={'100%'}
-      height={'100%'}
-    />
+  const { t } = useTranslation()
+  const labels = [
+    `${t('overview.donut.totalUsers')}`,
+    `${t('overview.donut.totalProducts')}`,
+    `${t('overview.donut.totalCategories')}`,
+    `${t('overview.donut.totalSales')}`,
+  ]
+  return data.series.length ? (
+    <>
+      <Title name={t('overview.donut.title')} />
+      <Chart
+        options={{ ...settings.options, labels }}
+        series={data.series}
+        type="donut"
+        width={'100%'}
+        height={'100%'}
+      />
+    </>
   ) : (
     <NoData />
   )

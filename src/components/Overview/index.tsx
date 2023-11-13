@@ -9,10 +9,15 @@ type OverviewProps = {
   users: Omit<User, 'address' | 'name'>[]
   products: Product[]
   loading: boolean
+  chartData: {
+    totalUsers: number
+    totalProducts: number
+    totalCategories: number
+    totalSales: number
+  }
   uploadUser: (data: any) => void
 }
 
-const donutData = { series: [44, 55, 41, 17, 15] }
 const areaData = {
   series: [
     {
@@ -26,7 +31,10 @@ const areaData = {
   ],
 }
 
-const Overview = ({ users, products, loading, uploadUser }: OverviewProps) => {
+const Overview = ({ users, products, loading, uploadUser, chartData }: OverviewProps) => {
+  const { totalUsers, totalProducts, totalCategories, totalSales } = chartData
+  const donutData = { series: [totalUsers, totalProducts, totalCategories, totalSales] }
+
   return (
     <div className="w-full md:h-[1024px] h-full flex flex-col md:flex-row gap-x-4 gap-y-4">
       <div className="h-full flex flex-col gap-y-4 md:w-[70%] w-full">
@@ -43,7 +51,6 @@ const Overview = ({ users, products, loading, uploadUser }: OverviewProps) => {
           <Area data={areaData} />
         </Card>
         <Card height="md:h-1/2 h-full">
-          <h1 className="text-2xl">Grafico 1</h1>
           <Donut data={donutData} />
         </Card>
       </div>

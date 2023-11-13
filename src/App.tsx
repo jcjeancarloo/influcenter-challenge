@@ -9,7 +9,8 @@ import { useEffect } from 'react'
 
 function App() {
   const { totalUsers, fetchUsers, parsedUsers, loadingUsers, uploadUser } = useUsers()
-  const { products, totalProducts, totalCategories, fetchProductAndCategories } = useProducts()
+  const { products, totalProducts, totalCategories, totalSales, fetchProductAndCategories } =
+    useProducts()
 
   useEffect(() => {
     fetchUsers()
@@ -24,12 +25,19 @@ function App() {
           totalUsers={totalUsers}
           totalProducts={totalProducts}
           totalCategories={totalCategories}
+          totalSales={totalSales}
         />
         <Overview
           users={parsedUsers}
           products={products}
           loading={loadingUsers}
           uploadUser={uploadUser}
+          chartData={{
+            totalUsers,
+            totalProducts,
+            totalCategories,
+            totalSales,
+          }}
         />
         <Footer />
       </Wrapper>

@@ -32,6 +32,7 @@ const useProducts = () => {
     products,
     totalCategories,
     totalProducts,
+    totalSales: 25,
     fetchProductAndCategories,
   }
 }

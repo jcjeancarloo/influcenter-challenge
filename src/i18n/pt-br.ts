@@ -14,7 +14,14 @@ export default  {
     },
     overview: {
       users: 'Usuários',
-      products: 'Produtos'
+      products: 'Produtos',
+      donut: {
+        title: "Dados gerais",
+        totalUsers: 'Total Usuários',
+        totalProducts: 'Total Produtos',
+        totalCategories: 'Total Categorias',
+        totalSales: 'Total Vendas'
+      }
     },
     table: {
       user: {

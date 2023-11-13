@@ -6,8 +6,9 @@ type SummaryProps = {
   totalUsers: number
   totalProducts: number
   totalCategories: number
+  totalSales: number
 }
-const Summary = ({ totalUsers, totalProducts, totalCategories }: SummaryProps) => {
+const Summary = ({ totalUsers, totalProducts, totalCategories, totalSales }: SummaryProps) => {
   const { t } = useTranslation()
 
   return (
@@ -21,7 +22,7 @@ const Summary = ({ totalUsers, totalProducts, totalCategories }: SummaryProps) =
       <Item count={totalCategories} description={t('summary.categories')} color="emerald">
         <FaTags className="text-xl md:text-4xl text-emerald-500" />
       </Item>
-      <Item count={25} description={t('summary.sales')} color="yellow">
+      <Item count={totalSales} description={t('summary.sales')} color="yellow">
         <FaShoppingCart className="text-xl md:text-4xl text-yellow-500" />
       </Item>
     </div>
