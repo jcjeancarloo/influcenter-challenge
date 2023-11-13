@@ -8,7 +8,7 @@ const useUsers = () => {
   const fetchUsers = useCallback(async () => {
     setTimeout(() => {
       setUsers(usersList)
-    }, 1000)
+    }, 100)
   }, [setUsers])
 
   const uploadUser = useCallback(
