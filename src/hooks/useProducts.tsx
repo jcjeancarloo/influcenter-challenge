@@ -4,7 +4,8 @@ import { Product } from '@shared/types'
 import { useCallback, useContext, useMemo } from 'react'
 
 const useProducts = () => {
-  const { products, categories, setProducts, setCategories } = useContext(DashboardContext)
+  const { products, categories, sales, setSales, setProducts, setCategories } =
+    useContext(DashboardContext)
 
   const fetchProductAndCategories = useCallback(() => {
     setTimeout(() => {
@@ -31,6 +32,8 @@ const useProducts = () => {
     [products, setProducts]
   )
 
+  const handleAddSale = () => setSales((sales) => sales + 1)
+
   const totalProducts = useMemo(() => products.length, [products])
   const totalCategories = useMemo(() => categories.length, [categories])
 
@@ -38,9 +41,10 @@ const useProducts = () => {
     products,
     totalCategories,
     totalProducts,
-    totalSales: 25,
+    totalSales: sales,
     fetchProductAndCategories,
     uploadProduct,
+    handleAddSale,
   }
 }
 

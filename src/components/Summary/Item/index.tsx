@@ -1,13 +1,16 @@
 import Card from '@components/Common/Card'
+import { FaPlus } from 'react-icons/fa'
 
 type ItemProps = {
   count: number
   description: string
   children: React.ReactNode
   color: string
+  isSale?: boolean
+  handleAddSale?: () => void
 }
 
-const Item = ({ count, description, color, children }: ItemProps) => {
+const Item = ({ count, description, color, isSale, handleAddSale, children }: ItemProps) => {
   const colors = {
     indigo: 'border-indigo-700',
     yellow: 'border-yellow-700',
@@ -28,6 +31,14 @@ const Item = ({ count, description, color, children }: ItemProps) => {
           <span className="text-2xl font-semibold">{count}</span>
           <span className="text-gray-500 font-bold">{description}</span>
         </div>
+        {isSale && handleAddSale && (
+          <span
+            onClick={handleAddSale}
+            className="flex flex-row items-center gap-x-2 text-gray-500 hover:text-gray-200 transition cursor-pointer font-semibold"
+          >
+            <FaPlus className="text-md" /> Adicionar venda
+          </span>
+        )}
       </div>
     </Card>
   )

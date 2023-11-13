@@ -16,6 +16,7 @@ function App() {
     totalSales,
     fetchProductAndCategories,
     uploadProduct,
+    handleAddSale,
   } = useProducts()
 
   useEffect(() => {
@@ -32,6 +33,7 @@ function App() {
           totalProducts={totalProducts}
           totalCategories={totalCategories}
           totalSales={totalSales}
+          handleAddSale={handleAddSale}
         />
         <Overview
           users={parsedUsers}
