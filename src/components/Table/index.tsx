@@ -1,5 +1,5 @@
 import i18n from '@i18n/index'
-import { DataGrid, enUS, ptBR } from '@mui/x-data-grid'
+import { DataGrid, GridToolbar, enUS, ptBR } from '@mui/x-data-grid'
 import { useTranslation } from 'react-i18next'
 import { style } from './settings'
 
@@ -47,14 +47,22 @@ const Table = ({ data, isUserTable }: TableProps) => {
         },
       }}
       showCellVerticalBorder={false}
-      disableVirtualization
       disableColumnMenu
       disableColumnSelector
       disableColumnFilter
+      disableDensitySelector
       disableRowSelectionOnClick
       pageSizeOptions={[5, 10]}
       sx={style}
       localeText={languageDataSetting}
+      slots={{ toolbar: GridToolbar }}
+      slotProps={{
+        toolbar: {
+          showQuickFilter: true,
+          printOptions: { disableToolbarButton: true },
+          csvOptions: { disableToolbarButton: true },
+        },
+      }}
     />
   )
 }

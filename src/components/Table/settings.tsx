@@ -36,4 +36,8 @@ export const style = {
   '& .MuiDataGrid-cell': {
     borderBottom: '1px  solid #333646',
   },
+
+  '& .MuiInputBase-input': {
+    color: 'white',
+  },
 }
