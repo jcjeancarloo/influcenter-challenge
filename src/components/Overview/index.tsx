@@ -8,7 +8,6 @@ import { Product, User } from '@shared/types'
 type OverviewProps = {
   users: Omit<User, 'address' | 'name'>[]
   products: Product[]
-  loading: boolean
   chartData: {
     totalUsers: number
     totalProducts: number
@@ -18,7 +17,7 @@ type OverviewProps = {
   uploadUser: (data: any) => void
 }
 
-const Overview = ({ users, products, loading, uploadUser, chartData }: OverviewProps) => {
+const Overview = ({ users, products, uploadUser, chartData }: OverviewProps) => {
   const { totalUsers, totalProducts, totalCategories, totalSales } = chartData
   const donutData = { series: [totalUsers, totalProducts, totalCategories, totalSales] }
   const pieData = { series: [totalUsers, totalSales] }

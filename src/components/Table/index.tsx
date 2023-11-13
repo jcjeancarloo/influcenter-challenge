@@ -70,6 +70,12 @@ const Table = ({ data, isUserTable, handleUpload }: TableProps) => {
               paginationModel: { page: 0, pageSize: 10 },
             },
           }}
+          sortModel={[
+            {
+              field: 'id',
+              sort: 'desc',
+            },
+          ]}
           showCellVerticalBorder={false}
           disableColumnMenu
           disableColumnSelector

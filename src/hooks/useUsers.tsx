@@ -1,20 +1,15 @@
 import { DashboardContext } from '@contexts/dashboard-context'
-import { api } from '@services/fake-store-api'
+import usersList from '@data/users-list.json'
 import { User } from '@shared/types'
 import { useCallback, useContext, useMemo } from 'react'
 
 const useUsers = () => {
-  const { users, loadingUsers, setLoadingUsers, setUsers } = useContext(DashboardContext)
+  const { users, setUsers } = useContext(DashboardContext)
   const fetchUsers = useCallback(async () => {
-    try {
-      setLoadingUsers(true)
-      const { data } = await api.get('/users?limit=20')
-      setUsers(data)
-      setLoadingUsers(false)
-    } catch (error) {
-      console.log(error)
-    }
-  }, [setLoadingUsers, setUsers])
+    setTimeout(() => {
+      setUsers(usersList)
+    }, 1000)
+  }, [setUsers])
 
   const uploadUser = useCallback(
     async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -25,9 +20,7 @@ const useUsers = () => {
           const data = event.target.result
           const list: User[] = [...users]
           const parsed: User[] = JSON.parse(data)
-          const newUserId = list.length ? list[list.length - 1].id + 1 : list.length + 1
-          parsed.map((user) => list.push({ ...user, id: newUserId }))
-          list.reverse()
+          parsed.map((user) => list.push({ ...user, id: list[list.length - 1].id + 1 }))
           setUsers(list)
         }
         fileReader.readAsText(file)
@@ -53,7 +46,6 @@ const useUsers = () => {
     users,
     totalUsers,
     fetchUsers,
-    loadingUsers,
     parsedUsers,
     uploadUser,
   }

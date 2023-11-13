@@ -13,6 +13,7 @@ export default defineConfig({
       '@shared': "/src/shared",
       '@assets': "/src/assets",
       '@i18n': "/src/i18n",
+      '@data': "/src/data",
     },
   },
   define: {global: 'window'}

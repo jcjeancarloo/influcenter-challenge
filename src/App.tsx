@@ -8,7 +8,7 @@ import useUsers from '@hooks/useUsers'
 import { useEffect } from 'react'
 
 function App() {
-  const { totalUsers, fetchUsers, parsedUsers, loadingUsers, uploadUser } = useUsers()
+  const { totalUsers, fetchUsers, parsedUsers, uploadUser } = useUsers()
   const { products, totalProducts, totalCategories, totalSales, fetchProductAndCategories } =
     useProducts()
 
@@ -30,7 +30,6 @@ function App() {
         <Overview
           users={parsedUsers}
           products={products}
-          loading={loadingUsers}
           uploadUser={uploadUser}
           chartData={{
             totalUsers,
