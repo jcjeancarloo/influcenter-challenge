@@ -2,7 +2,8 @@ export default  {
   translations: {
     common: {
       exit: "Sair",
-      noData: 'Nenhum dado a ser exibido'
+      noData: 'Nenhum dado a ser exibido',
+      add: 'Adicionar'
     },
     footer: 'Orgulhosamente criado por Jean Oliveira - Todos os direitos reservados © 2023',
     summary: {

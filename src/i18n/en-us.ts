@@ -2,7 +2,8 @@ export default  {
   translations: {
     common: {
       exit: 'Logout',
-      noData: 'No data to be displayed'
+      noData: 'No data to be displayed',
+      add: 'Add'
     },
     footer: 'Proudly created by Jean Oliveira - All rights reserved © 2023',
     summary: {

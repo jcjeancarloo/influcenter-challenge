@@ -2,14 +2,17 @@ import NoData from '@components/Common/NoData'
 import i18n from '@i18n/index'
 import { DataGrid, GridToolbar, enUS, ptBR } from '@mui/x-data-grid'
 import { useTranslation } from 'react-i18next'
+import Title from '../Common/Title'
+import Upload from '../Common/Upload'
 import { style } from './settings'
 
 type TableProps = {
   data: any[]
   isUserTable: boolean
+  handleUpload: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-const Table = ({ data, isUserTable }: TableProps) => {
+const Table = ({ data, isUserTable, handleUpload }: TableProps) => {
   const { t } = useTranslation()
   const userTable = () => [
     { field: 'id', headerName: 'ID', width: 100 },
@@ -38,36 +41,57 @@ const Table = ({ data, isUserTable }: TableProps) => {
       ? ptBR.components.MuiDataGrid.defaultProps.localeText
       : enUS.components.MuiDataGrid.defaultProps.localeText
 
-  console.log(data)
-  return data.length ? (
-    <DataGrid
-      rows={data}
-      columns={isUserTable ? userTable() : productTable()}
-      initialState={{
-        pagination: {
-          paginationModel: { page: 0, pageSize: 10 },
-        },
-      }}
-      showCellVerticalBorder={false}
-      disableColumnMenu
-      disableColumnSelector
-      disableColumnFilter
-      disableDensitySelector
-      disableRowSelectionOnClick
-      pageSizeOptions={[5, 10]}
-      sx={style}
-      localeText={languageDataSetting}
-      slots={{ toolbar: GridToolbar }}
-      slotProps={{
-        toolbar: {
-          showQuickFilter: true,
-          printOptions: { disableToolbarButton: true },
-          csvOptions: { disableToolbarButton: true },
-        },
-      }}
-    />
-  ) : (
-    <NoData />
+  const HeaderActions = ({ isUsers }: { isUsers: boolean }) => {
+    const fromTranslate = isUsers ? t('overview.users') : t('overview.products')
+    const formattedButtonName = `${t('common.add')} ${fromTranslate
+      .charAt(0)
+      .toLowerCase()}${fromTranslate.slice(1)}`
+    return (
+      <div className="flex flex-row w-full items-center pb-4">
+        <div className="w-[50%]">
+          <Title name={fromTranslate} />
+        </div>
+        <div className=" w-[50%] flex flex-row justify-end">
+          <Upload description={formattedButtonName} handleUpload={handleUpload} />
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <div className="flex flex-col gap-y-4 h-full">
+      <HeaderActions isUsers={isUserTable} />
+      {data.length ? (
+        <DataGrid
+          rows={data}
+          columns={isUserTable ? userTable() : productTable()}
+          initialState={{
+            pagination: {
+              paginationModel: { page: 0, pageSize: 10 },
+            },
+          }}
+          showCellVerticalBorder={false}
+          disableColumnMenu
+          disableColumnSelector
+          disableColumnFilter
+          disableDensitySelector
+          disableRowSelectionOnClick
+          pageSizeOptions={[5, 10]}
+          sx={style}
+          localeText={languageDataSetting}
+          slots={{ toolbar: GridToolbar }}
+          slotProps={{
+            toolbar: {
+              showQuickFilter: true,
+              printOptions: { disableToolbarButton: true },
+              csvOptions: { disableToolbarButton: true },
+            },
+          }}
+        />
+      ) : (
+        <NoData />
+      )}
+    </div>
   )
 }
 

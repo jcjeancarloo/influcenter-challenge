@@ -1,17 +1,15 @@
 import Area from '@components/Charts/Area'
 import Donut from '@components/Charts/Donut'
 import Card from '@components/Common/Card'
-import Title from '@components/Common/Title'
 import Table from '@components/Table'
 
 import { Product, User } from '@shared/types'
-
-import { useTranslation } from 'react-i18next'
 
 type OverviewProps = {
   users: Omit<User, 'address' | 'name'>[]
   products: Product[]
   loading: boolean
+  uploadUser: (data: any) => void
 }
 
 const donutData = { series: [44, 55, 41, 17, 15] }
@@ -28,22 +26,15 @@ const areaData = {
   ],
 }
 
-const Overview = ({ users, products, loading }: OverviewProps) => {
-  const { t } = useTranslation()
+const Overview = ({ users, products, loading, uploadUser }: OverviewProps) => {
   return (
     <div className="w-full md:h-[1024px] h-full flex flex-col md:flex-row gap-x-4 gap-y-4">
       <div className="h-full flex flex-col gap-y-4 md:w-[70%] w-full">
         <Card width="w-full" height="md:h-1/2 h-full">
-          <div className="flex flex-col gap-y-4 h-full">
-            <Title name={t('overview.users')} />
-            <Table data={users} isUserTable />
-          </div>
+          <Table data={users} isUserTable handleUpload={uploadUser} />
         </Card>
         <Card width="w-full" height="md:h-1/2 h-full">
-          <div className="flex flex-col gap-y-4 h-full">
-            <Title name={t('overview.products')} />
-            <Table data={products} isUserTable={false} />
-          </div>
+          <Table data={products} isUserTable={false} handleUpload={uploadUser} />
         </Card>
       </div>
       <div className="h-full flex flex-col gap-y-4 md:w-[30%] w-full">

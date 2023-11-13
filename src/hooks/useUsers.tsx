@@ -1,10 +1,10 @@
 import { DashboardContext } from '@contexts/dashboard-context'
 import { api } from '@services/fake-store-api'
+import { User } from '@shared/types'
 import { useCallback, useContext, useMemo } from 'react'
 
 const useUsers = () => {
   const { users, loadingUsers, setLoadingUsers, setUsers } = useContext(DashboardContext)
-
   const fetchUsers = useCallback(async () => {
     try {
       setLoadingUsers(true)
@@ -15,6 +15,26 @@ const useUsers = () => {
       console.log(error)
     }
   }, [setLoadingUsers, setUsers])
+
+  const uploadUser = useCallback(
+    async (e: React.ChangeEvent<HTMLInputElement>) => {
+      const file = e.target?.files?.[0]
+      const fileReader = new FileReader()
+      if (file) {
+        fileReader.onload = function (event: any) {
+          const data = event.target.result
+          const list: User[] = [...users]
+          const parsed: User[] = JSON.parse(data)
+          const newUserId = list.length ? list[list.length - 1].id + 1 : list.length + 1
+          parsed.map((user) => list.push({ ...user, id: newUserId }))
+          list.reverse()
+          setUsers(list)
+        }
+        fileReader.readAsText(file)
+      }
+    },
+    [setUsers, users]
+  )
 
   const totalUsers = useMemo(() => users.length, [users])
 
@@ -35,6 +55,7 @@ const useUsers = () => {
     fetchUsers,
     loadingUsers,
     parsedUsers,
+    uploadUser,
   }
 }
 
