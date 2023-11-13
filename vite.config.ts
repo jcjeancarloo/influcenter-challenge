@@ -12,6 +12,7 @@ export default defineConfig({
       '@hooks': "/src/hooks",
       '@shared': "/src/shared",
       '@assets': "/src/assets",
+      '@i18n': "/src/i18n",
     },
   },
   define: {global: 'window'}

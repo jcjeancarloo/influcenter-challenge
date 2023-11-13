@@ -1,9 +1,9 @@
+import { useTranslation } from 'react-i18next'
 const Footer = () => {
+  const { t } = useTranslation()
   return (
     <footer className="w-full text-center pb-4">
-      <small className="text-gray-500">
-        Proudly created by Jean Oliveira - All rights reserved © 2023
-      </small>
+      <small className="text-gray-500">{t('footer')}</small>
     </footer>
   )
 }

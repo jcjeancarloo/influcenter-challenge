@@ -16,9 +16,12 @@
     "@mui/x-data-grid": "^6.18.1",
     "apexcharts": "^3.44.0",
     "axios": "^1.6.1",
+    "country-flag-icons": "^1.5.7",
+    "i18next-browser-languagedetector": "^7.2.0",
     "react": "^18.2.0",
     "react-apexcharts": "^1.4.1",
     "react-dom": "^18.2.0",
+    "react-i18next": "^13.4.0",
     "react-icons": "^4.11.0",
     "react-spinners": "^0.13.8"
   },

@@ -1,8 +1,12 @@
 import Area from '@components/Charts/Area'
 import Donut from '@components/Charts/Donut'
 import Card from '@components/Common/Card'
+import Title from '@components/Common/Title'
 import Table from '@components/Table'
+
 import { Product, User } from '@shared/types'
+
+import { useTranslation } from 'react-i18next'
 
 type OverviewProps = {
   users: Omit<User, 'address' | 'name'>[]
@@ -25,18 +29,19 @@ const areaData = {
 }
 
 const Overview = ({ users, products, loading }: OverviewProps) => {
+  const { t } = useTranslation()
   return (
     <div className="w-full md:h-[1024px] h-full flex flex-col md:flex-row gap-x-4 gap-y-4">
       <div className="h-full flex flex-col gap-y-4 md:w-[70%] w-full">
         <Card width="w-full" height="md:h-1/2 h-full">
           <div className="flex flex-col gap-y-4 h-full">
-            <h1 className="text-2xl">Usuários</h1>
+            <Title name={t('overview.users')} />
             <Table data={users} isUserTable />
           </div>
         </Card>
         <Card width="w-full" height="md:h-1/2 h-full">
           <div className="flex flex-col gap-y-4 h-full">
-            <h1 className="text-2xl">Produtos</h1>
+            <Title name={t('overview.products')} />
             <Table data={products} isUserTable={false} />
           </div>
         </Card>

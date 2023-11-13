@@ -6,6 +6,7 @@ type ItemProps = {
   children: React.ReactNode
   color: string
 }
+
 const Item = ({ count, description, color, children }: ItemProps) => {
   const colors = {
     indigo: 'border-indigo-700',

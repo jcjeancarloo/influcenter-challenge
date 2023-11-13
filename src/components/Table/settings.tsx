@@ -37,20 +37,3 @@ export const style = {
     borderBottom: '1px  solid #333646',
   },
 }
-
-export const userTable = [
-  { field: 'id', headerName: 'ID', width: 100 },
-  { field: 'firstname', headerName: 'Nome', width: 200 },
-  { field: 'lastname', headerName: 'Sobrenome', width: 200 },
-  { field: 'email', headerName: 'E-mail', width: 200 },
-  { field: 'username', headerName: 'Login', width: 200 },
-  { field: 'phone', headerName: 'Telefone', width: 200 },
-]
-
-export const productTable = [
-  { field: 'id', headerName: 'ID', width: 70 },
-  { field: 'title', headerName: 'Nome', width: 300 },
-  { field: 'price', headerName: 'Preço', width: 150 },
-  { field: 'category', headerName: 'Categoria', width: 200 },
-  { field: 'description', headerName: 'Descrição', width: 400, sortable: false },
-]
