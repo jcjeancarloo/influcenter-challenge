@@ -25,7 +25,7 @@ const Item = ({ count, description, color, children }: ItemProps) => {
         </div>
         <div className="flex flex-col">
           <span className="text-2xl font-semibold">{count}</span>
-          <span className="text-slate-500 font-bold">{description}</span>
+          <span className="text-gray-500 font-bold">{description}</span>
         </div>
       </div>
     </Card>
