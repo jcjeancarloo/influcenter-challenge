@@ -1,12 +1,10 @@
 import InflucenterLogo from '@assets/influcenter-challenge-logo-3.png'
 import UserPlaceholder from '@assets/user-placeholder.png'
 import { BR, US } from 'country-flag-icons/react/3x2'
-import { useTranslation } from 'react-i18next'
 
 import i18n from '@i18n/index'
 
 const Header = () => {
-  const { t } = useTranslation()
   const handleLanguage = () => {
     if (i18n.language === 'pt-BR') {
       i18n.changeLanguage('en-US')
@@ -37,18 +35,15 @@ const Header = () => {
       <div className="w-[45%] flex flex-row items-center justify-end gap-x-8">
         <div className="flex flex-row items-center gap-x-4 w-[80%] justify-end">
           <div
-            className="flex flex-row items-center w-[20%] gap-x-2 opacity-50 hover:opacity-100 cursor-pointer text-white transition"
+            className="flex flex-row items-center gap-x-2 opacity-50 hover:opacity-100 cursor-pointer text-white transition"
             onClick={handleLanguage}
           >
             <Language />
           </div>
 
-          <div className="flex md:flex-row flex-col justify-center items-center md:gap-x-4 gap-x-4 md:w-[200px] md:justify-end md:items-center ">
+          <div className="flex md:flex-row flex-col justify-center items-center md:gap-x-4 gap-x-4 md:w-[150px] md:justify-end md:items-center pl-5 md:pl-0">
             <img src={UserPlaceholder} className="w-[40px]" />
             <span className="text-white font-semibold cursor-default mt-2 md:mt-0 ">John Doe</span>
-            <span className="text-gray-500 font-semibold hover:text-gray-200 cursor-pointer transition w-[60px] text-center md:text-end">
-              {t('common.exit')}
-            </span>
           </div>
         </div>
       </div>
