@@ -1,10 +1,9 @@
 import NoData from '@components/Common/NoData'
+import Title from '@components/Common/Title'
 import Chart from 'react-apexcharts'
 import { useTranslation } from 'react-i18next'
 
-import Title from '@components/Common/Title'
-
-type DonutProps = {
+type PieProps = {
   data: any
 }
 
@@ -52,21 +51,17 @@ const settings = {
   },
 }
 
-const Donut = ({ data }: DonutProps) => {
+const Area = ({ data }: PieProps) => {
   const { t } = useTranslation()
-  const labels = [
-    `${t('overview.donut.totalUsers')}`,
-    `${t('overview.donut.totalProducts')}`,
-    `${t('overview.donut.totalCategories')}`,
-    `${t('overview.donut.totalSales')}`,
-  ]
+  const labels = [`${t('overview.donut.totalUsers')}`, `${t('overview.donut.totalSales')}`]
+
   return data.series.length ? (
     <div className="flex flex-col h-full w-full gap-y-4">
       <Title name={t('overview.donut.title')} />
       <Chart
         options={{ ...settings.options, labels }}
         series={data.series}
-        type="donut"
+        type="pie"
         width={'100%'}
         height={'100%'}
       />
@@ -76,4 +71,4 @@ const Donut = ({ data }: DonutProps) => {
   )
 }
 
-export default Donut
+export default Area
