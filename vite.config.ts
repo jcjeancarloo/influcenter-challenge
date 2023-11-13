@@ -11,6 +11,7 @@ export default defineConfig({
       '@contexts': "/src/contexts",
       '@hooks': "/src/hooks",
       '@shared': "/src/shared",
+      '@assets': "/src/assets",
     },
   },
   define: {global: 'window'}

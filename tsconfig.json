@@ -41,6 +41,9 @@
       "@shared/*": [
         "./src/shared/*"
       ],
+      "@assets/*": [
+        "./src/assets/*"
+      ],
     }
   },
   "include": [
