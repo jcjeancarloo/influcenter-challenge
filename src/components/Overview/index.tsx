@@ -15,9 +15,10 @@ type OverviewProps = {
     totalSales: number
   }
   uploadUser: (data: any) => void
+  uploadProduct: (data: any) => void
 }
 
-const Overview = ({ users, products, uploadUser, chartData }: OverviewProps) => {
+const Overview = ({ users, products, uploadUser, uploadProduct, chartData }: OverviewProps) => {
   const { totalUsers, totalProducts, totalCategories, totalSales } = chartData
   const donutData = { series: [totalUsers, totalProducts, totalCategories, totalSales] }
   const pieData = { series: [totalUsers, totalSales] }
@@ -29,7 +30,7 @@ const Overview = ({ users, products, uploadUser, chartData }: OverviewProps) => 
           <Table data={users} isUserTable handleUpload={uploadUser} />
         </Card>
         <Card width="w-full" height="md:h-1/2 h-full">
-          <Table data={products} isUserTable={false} handleUpload={uploadUser} />
+          <Table data={products} isUserTable={false} handleUpload={uploadProduct} />
         </Card>
       </div>
       <div className="h-full flex flex-col gap-y-4 md:w-[30%] w-full">

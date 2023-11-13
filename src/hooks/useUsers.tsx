@@ -12,7 +12,7 @@ const useUsers = () => {
   }, [setUsers])
 
   const uploadUser = useCallback(
-    async (e: React.ChangeEvent<HTMLInputElement>) => {
+    (e: React.ChangeEvent<HTMLInputElement>) => {
       const file = e.target?.files?.[0]
       const fileReader = new FileReader()
       if (file) {

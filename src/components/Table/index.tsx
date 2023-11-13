@@ -1,9 +1,9 @@
 import NoData from '@components/Common/NoData'
+import Title from '@components/Common/Title'
+import Upload from '@components/Common/Upload'
 import i18n from '@i18n/index'
 import { DataGrid, GridToolbar, enUS, ptBR } from '@mui/x-data-grid'
 import { useTranslation } from 'react-i18next'
-import Title from '../Common/Title'
-import Upload from '../Common/Upload'
 import { style } from './settings'
 
 type TableProps = {
@@ -16,7 +16,7 @@ const Table = ({ data, isUserTable, handleUpload }: TableProps) => {
   const { t } = useTranslation()
   const userTable = () => [
     { field: 'id', headerName: 'ID', width: 100 },
-    { field: 'firstname', headerName: `${t('table.user.firstname')}`, width: 200 },
+    { field: 'firstname', headerName: `${t('table.user.firstname')}`, width: 150 },
     { field: 'lastname', headerName: `${t('table.user.lastname')}`, width: 200 },
     { field: 'email', headerName: `${t('table.user.email')}`, width: 200 },
     { field: 'username', headerName: `${t('table.user.login')}`, width: 200 },

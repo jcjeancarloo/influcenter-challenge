@@ -7,14 +7,14 @@ type UploadProps = {
 
 const Upload = ({ handleUpload, description }: UploadProps) => (
   <label
-    htmlFor="jsonFileInput"
+    htmlFor={`jsonFileInput-${description.split(' ')[1]}`}
     className="bg-emerald-500 hover:bg-emerald-400 transition text-white py-2 px-4 rounded cursor-pointer flex flex-row items-center gap-x-2"
   >
     <FaPlus className="text-md" />
     {description}
     <input
       type="file"
-      id="jsonFileInput"
+      id={`jsonFileInput-${description.split(' ')[1]}`}
       accept=".json"
       onChange={handleUpload}
       className="hidden"
