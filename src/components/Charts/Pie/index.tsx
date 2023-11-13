@@ -1,5 +1,7 @@
+/* eslint-disable react-refresh/only-export-components */
 import NoData from '@components/Common/NoData'
 import Title from '@components/Common/Title'
+import { memo } from 'react'
 import Chart from 'react-apexcharts'
 import { useTranslation } from 'react-i18next'
 
@@ -71,4 +73,4 @@ const Pie = ({ data }: PieProps) => {
   )
 }
 
-export default Pie
+export default memo(Pie)

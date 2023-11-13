@@ -1,4 +1,6 @@
+/* eslint-disable react-refresh/only-export-components */
 import Card from '@components/Common/Card'
+import { memo } from 'react'
 import { FaPlus } from 'react-icons/fa'
 
 type ItemProps = {
@@ -44,4 +46,4 @@ const Item = ({ count, description, color, isSale, handleAddSale, children }: It
   )
 }
 
-export default Item
+export default memo(Item)

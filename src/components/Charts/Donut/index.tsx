@@ -1,8 +1,10 @@
+/* eslint-disable react-refresh/only-export-components */
 import NoData from '@components/Common/NoData'
 import Chart from 'react-apexcharts'
 import { useTranslation } from 'react-i18next'
 
 import Title from '@components/Common/Title'
+import { memo } from 'react'
 
 type DonutProps = {
   data: any
@@ -76,4 +78,4 @@ const Donut = ({ data }: DonutProps) => {
   )
 }
 
-export default Donut
+export default memo(Donut)
