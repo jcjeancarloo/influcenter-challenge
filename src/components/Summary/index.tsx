@@ -20,13 +20,18 @@ const Summary = ({
 
   return (
     <div className="flex flex-col gap-4 md:flex-row w-full">
-      <Item count={totalUsers} description={t('summary.users')} color="indigo">
+      <Item count={totalUsers} description={t('summary.users')} color="indigo" motionDelay={0.1}>
         <FaUser className="text-xl md:text-4xl text-indigo-500" />
       </Item>
-      <Item count={totalProducts} description={t('summary.products')} color="red">
+      <Item count={totalProducts} description={t('summary.products')} color="red" motionDelay={0.3}>
         <FaShoppingBasket className="text-xl md:text-4xl text-red-500" />
       </Item>
-      <Item count={totalCategories} description={t('summary.categories')} color="emerald">
+      <Item
+        count={totalCategories}
+        description={t('summary.categories')}
+        color="emerald"
+        motionDelay={0.5}
+      >
         <FaTags className="text-xl md:text-4xl text-emerald-500" />
       </Item>
       <Item
@@ -35,6 +40,7 @@ const Summary = ({
         color="yellow"
         isSale
         handleAddSale={handleAddSale}
+        motionDelay={0.8}
       >
         <FaShoppingCart className="text-xl md:text-4xl text-yellow-500" />
       </Item>

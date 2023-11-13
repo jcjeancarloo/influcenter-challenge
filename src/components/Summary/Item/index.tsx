@@ -9,10 +9,19 @@ type ItemProps = {
   children: React.ReactNode
   color: string
   isSale?: boolean
+  motionDelay: number
   handleAddSale?: () => void
 }
 
-const Item = ({ count, description, color, isSale, handleAddSale, children }: ItemProps) => {
+const Item = ({
+  count,
+  description,
+  color,
+  isSale,
+  motionDelay,
+  handleAddSale,
+  children,
+}: ItemProps) => {
   const colors = {
     indigo: 'border-indigo-700',
     yellow: 'border-yellow-700',
@@ -20,7 +29,7 @@ const Item = ({ count, description, color, isSale, handleAddSale, children }: It
     emerald: 'border-emerald-700',
   }
   return (
-    <Card width="md:w-1/4">
+    <Card width="md:w-1/4" motionDelay={motionDelay}>
       <div className="flex flex-row gap-y-4 w-full gap-x-8 items-center">
         <div
           className={`w-[60px] h-[60px] md:w-[80px] md:h-[80px] rounded-full flex flex-col items-center justify-center border ${
