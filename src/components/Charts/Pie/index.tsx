@@ -51,13 +51,13 @@ const settings = {
   },
 }
 
-const Area = ({ data }: PieProps) => {
+const Pie = ({ data }: PieProps) => {
   const { t } = useTranslation()
   const labels = [`${t('overview.donut.totalUsers')}`, `${t('overview.donut.totalSales')}`]
 
   return data.series.length ? (
     <div className="flex flex-col h-full w-full gap-y-4">
-      <Title name={t('overview.donut.title')} />
+      <Title name={t('overview.pie.title')} />
       <Chart
         options={{ ...settings.options, labels }}
         series={data.series}
@@ -71,4 +71,4 @@ const Area = ({ data }: PieProps) => {
   )
 }
 
-export default Area
+export default Pie
