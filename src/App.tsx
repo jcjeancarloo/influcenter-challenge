@@ -17,7 +17,7 @@ function App() {
   }, [fetchUsers, fetchProductAndCategories])
 
   return (
-    <main className="flex flex-col justify-center items-center w-full h-screen bg-main font-nunito">
+    <main className="flex flex-col justify-center items-center w-full min-h-screen h-full bg-main font-nunito">
       <Wrapper>
         <Header />
         <Summary

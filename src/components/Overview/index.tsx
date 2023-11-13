@@ -26,7 +26,7 @@ const areaData = {
 
 const Overview = ({ users, products, loading }: OverviewProps) => {
   return (
-    <div className="w-full h-[1024px] flex flex-col md:flex-row gap-x-4 gap-y-4">
+    <div className="w-full md:h-[1024px] h-full flex flex-col md:flex-row gap-x-4 gap-y-4">
       <div className="h-full flex flex-col gap-y-4 md:w-[70%] w-full">
         <Card width="w-full" height="md:h-1/2 h-full">
           <div className="flex flex-col gap-y-4 h-full">

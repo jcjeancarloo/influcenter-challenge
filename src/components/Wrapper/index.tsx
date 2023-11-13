@@ -4,7 +4,7 @@ type WrapperProps = {
 
 const Wrapper = ({ children }: WrapperProps) => {
   return (
-    <div className="max-w-[1920px] w-full flex flex-col gap-y-8 items-center justify-center h-screen">
+    <div className="md:max-w-[1920px] max-w-[90vw] w-full flex flex-col gap-y-8 items-center justify-center h-full">
       {children}
     </div>
   )
