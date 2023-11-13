@@ -4,7 +4,9 @@ export type User = {
   name: {
     firstname: string
     lastname: string
-  }
+  },
+  username: string
+  phone: string
 }
 
 export type Product = {

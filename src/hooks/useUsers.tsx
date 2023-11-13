@@ -21,9 +21,11 @@ const useUsers = () => {
   const parsedUsers = useMemo(() => {
     return users.map((user) => ({
       id: user.id,
-      firstname: user.name.firstname,
-      lastname: user.name.lastname,
+      firstname: `${user.name.firstname.charAt(0).toUpperCase()}${user.name.firstname.slice(1)}`,
+      lastname: `${user.name.lastname.charAt(0).toUpperCase()}${user.name.lastname.slice(1)}`,
       email: user.email,
+      username: user.username,
+      phone: user.phone,
     }))
   }, [users])
 

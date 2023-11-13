@@ -1,30 +1,49 @@
 export const style = {
   color: 'white',
+  border: 'none',
   '& .MuiSvgIcon-root': {
-    color: '#64748b',
+    color: 'white',
   },
   '& .MuiTablePagination-root': {
-    color: '#64748b',
+    color: '#777883',
+  },
+  '& .MuiDataGrid-footerContainer': {
+    border: 'none',
+    marginTop: '10px',
   },
   '& ::-webkit-scrollbar': {
     width: '6px',
   },
   '& ::-webkit-scrollbar-track': {
-    backgroundColor: '#f5f5f5',
+    backgroundColor: '#333646',
   },
   '& ::-webkit-scrollbar-thumb': {
     borderRadius: '10px',
     boxShadow: 'inset 0 0 6px rgba(0,0,0,.3)',
-    backgroundColor: '#d40e0e',
+    backgroundColor: '#44a5ff',
+  },
+
+  '& .MuiDataGrid-columnHeaderTitle': {
+    fontWeight: 'bold',
   },
   '& .MuiDataGrid-columnSeparator': { display: 'none' },
+  '& .MuiDataGrid-columnHeaders': {
+    borderBottom: '1px solid #333646',
+    fontWeight: 'bold',
+  },
+
+  '& .MuiDataGrid-cell': {
+    borderBottom: '1px  solid #333646',
+  },
 }
 
 export const userTable = [
-  { field: 'id', headerName: 'ID', width: 70 },
-  { field: 'firstname', headerName: 'Nome', width: 130 },
-  { field: 'lastname', headerName: 'Sobrenome', width: 130 },
-  { field: 'email', headerName: 'E-mail', width: 130 },
+  { field: 'id', headerName: 'ID', width: 100 },
+  { field: 'firstname', headerName: 'Nome', width: 200 },
+  { field: 'lastname', headerName: 'Sobrenome', width: 200 },
+  { field: 'email', headerName: 'E-mail', width: 200 },
+  { field: 'username', headerName: 'Login', width: 200 },
+  { field: 'phone', headerName: 'Telefone', width: 200 },
 ]
 
 export const productTable = [
