@@ -21,6 +21,9 @@ export default  {
         totalProducts: 'Total Products',
         totalCategories: 'Total Categories',
         totalSales: 'Total Sales'
+      },
+      pie: {
+        title: 'Users x Sales',
       }
     },
     table: {
