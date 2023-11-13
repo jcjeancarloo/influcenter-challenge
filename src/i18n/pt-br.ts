@@ -1,7 +1,8 @@
 export default  {
   translations: {
     common: {
-      exit: "Sair"
+      exit: "Sair",
+      noData: 'Nenhum dado a ser exibido'
     },
     footer: 'Orgulhosamente criado por Jean Oliveira - Todos os direitos reservados © 2023',
     summary: {

@@ -1,3 +1,4 @@
+import NoData from '@components/Common/NoData'
 import i18n from '@i18n/index'
 import { DataGrid, GridToolbar, enUS, ptBR } from '@mui/x-data-grid'
 import { useTranslation } from 'react-i18next'
@@ -37,7 +38,8 @@ const Table = ({ data, isUserTable }: TableProps) => {
       ? ptBR.components.MuiDataGrid.defaultProps.localeText
       : enUS.components.MuiDataGrid.defaultProps.localeText
 
-  return (
+  console.log(data)
+  return data.length ? (
     <DataGrid
       rows={data}
       columns={isUserTable ? userTable() : productTable()}
@@ -64,6 +66,8 @@ const Table = ({ data, isUserTable }: TableProps) => {
         },
       }}
     />
+  ) : (
+    <NoData />
   )
 }
 

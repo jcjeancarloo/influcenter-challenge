@@ -21,11 +21,7 @@ const Summary = ({ totalUsers, totalProducts, totalCategories }: SummaryProps) =
       <Item count={totalCategories} description={t('summary.categories')} color="emerald">
         <FaTags className="text-xl md:text-4xl text-emerald-500" />
       </Item>
-      <Item
-        count={Math.floor(Math.random() * (100 - 10 + 1)) + 10}
-        description={t('summary.sales')}
-        color="yellow"
-      >
+      <Item count={25} description={t('summary.sales')} color="yellow">
         <FaShoppingCart className="text-xl md:text-4xl text-yellow-500" />
       </Item>
     </div>

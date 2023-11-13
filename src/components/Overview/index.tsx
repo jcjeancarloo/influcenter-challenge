@@ -47,7 +47,7 @@ const Overview = ({ users, products, loading }: OverviewProps) => {
         </Card>
       </div>
       <div className="h-full flex flex-col gap-y-4 md:w-[30%] w-full">
-        <Card height="h-1/2">
+        <Card height="md:h-1/2 h-full">
           <h1 className="text-2xl">Grafico 1</h1>
           <Area data={areaData} />
         </Card>

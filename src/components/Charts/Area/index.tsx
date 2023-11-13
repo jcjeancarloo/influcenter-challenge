@@ -1,3 +1,4 @@
+import NoData from '@components/Common/NoData'
 import Chart from 'react-apexcharts'
 
 type DonutProps = {
@@ -39,7 +40,7 @@ const settings = {
 }
 
 const Area = ({ data }: DonutProps) => {
-  return (
+  return data.length ? (
     <Chart
       options={settings.options}
       series={data.series}
@@ -47,6 +48,8 @@ const Area = ({ data }: DonutProps) => {
       width={'100%'}
       height={'100%'}
     />
+  ) : (
+    <NoData />
   )
 }
 
