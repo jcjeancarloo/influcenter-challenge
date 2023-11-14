@@ -1,5 +1,3 @@
-'use client'
-
 import { Product, User } from '@shared/types'
 import { ReactNode, createContext, useState } from 'react'
 
@@ -15,8 +13,6 @@ type DashboardContextData = {
   setUsers: (users: User[]) => void
   setProducts: (products: Product[]) => void
   setCategories: (categories: string[]) => void
-  // setSales: (value: number) => void
-
   setSales: (cb: (value: number) => number) => void
 }
 
