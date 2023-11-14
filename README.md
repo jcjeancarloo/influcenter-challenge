@@ -1,27 +1,37 @@
-# React + TypeScript + Vite
+# Influcenter Challenge - Jean Oliveira
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+O desafio consiste na criação de uma dashboard para visualização, análise e interatividade dos dados.
+<br>
+Para corresponder a altura do desafio, a dashboard se baseia em dados de um possível e-commerce.<br><br>
 
-Currently, two official plugins are available:
+## Como rodar o projeto?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Pelo projeto ter sido criado através do Vite basta instalar as dependencias atráves do comando `npm install` e iniciar o projeto pelo comando `npm start` <br><br>
 
-## Expanding the ESLint configuration
+## Interagindo com os dados
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+O projeto foi criado atráves de lista de dados fake obtida pelo site [FakeStoreAPI](https://fakestoreapi.com/), dados estes que podem ser encontrados através de arquivos JSON na pasta `data`.
+<br>
+<br>
+Lá você irá encontrar 4 arquivos, os arquivos com sufixo "list" são utilizados para a listagem padrão, já os arquivos com o prefixo "add" são utilizados como exemplo de importação de dados (criado apenas para facilitar o teste da funcionalidade).
+<br>
+Fique a vontade para criar uma lista quantos items desejar, atente-se ao padrão dos arquivos.
+<br>
+<br>
+Exceto "vendas", os demais marcadores e gráficos refletem os dados reais obtidos através das listas, para criar uma interatividade nos números das vendas, foi adicionado uma funcionalidade que acionar o "Adicionar venda", é incrementado uma venda ao contador.<br><br>
 
-- Configure the top-level `parserOptions` property like this:
+## Tecnologias/Bibliotecas Utilizadas
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+- Estilização: TailwindCSS
+- Internacionalização: React i18n
+- Testes: Jest + React Testing Library
+- Animação: Framer motion
+- Icones: React Icons
+- Toaster: React Toastify
+- Tabelas: Material UI
+- Gráficos: Apex Charts
+- Loader: React Spinner
+- Logo: Photoshop
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+<br>
+Observação: a adição da palavra "Challenge" ao logo da Influcenter foi criada por mim apenas para aumentar a customização e caracterizar melhor a aplicação para fins visuais.
