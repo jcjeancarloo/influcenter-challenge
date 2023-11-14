@@ -1,6 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
 import Card from '@components/Common/Card'
 import { memo } from 'react'
+import { useTranslation } from 'react-i18next'
 import { FaPlus } from 'react-icons/fa'
 
 type ItemProps = {
@@ -28,6 +29,8 @@ const Item = ({
     red: 'border-red-700',
     emerald: 'border-emerald-700',
   }
+
+  const { t } = useTranslation()
   return (
     <Card width="md:w-1/4" motionDelay={motionDelay}>
       <div className="flex flex-row gap-y-4 w-full gap-x-8 items-center">
@@ -41,15 +44,15 @@ const Item = ({
         <div className="flex flex-col">
           <span className="text-2xl font-semibold">{count}</span>
           <span className="text-gray-500 font-bold">{description}</span>
+          {isSale && handleAddSale && (
+            <span
+              onClick={handleAddSale}
+              className="flex flex-row items-center justify-end gap-x-2 text-gray-500 hover:text-gray-200 transition cursor-pointer font-semibold md:text-sm"
+            >
+              <FaPlus className="text-md" /> {t('summary.addSale')}
+            </span>
+          )}
         </div>
-        {isSale && handleAddSale && (
-          <span
-            onClick={handleAddSale}
-            className="flex flex-row items-center gap-x-2 text-gray-500 hover:text-gray-200 transition cursor-pointer font-semibold"
-          >
-            <FaPlus className="text-md" /> Adicionar venda
-          </span>
-        )}
       </div>
     </Card>
   )

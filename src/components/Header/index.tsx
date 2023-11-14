@@ -4,17 +4,22 @@ import { BR, US } from 'country-flag-icons/react/3x2'
 
 import i18n from '@i18n/index'
 
+import { useState } from 'react'
+
 const Header = () => {
+  const [currLanguage, setCurrLanguage] = useState(i18n.language)
   const handleLanguage = () => {
     if (i18n.language === 'pt-BR') {
       i18n.changeLanguage('en-US')
+      setCurrLanguage('en-US')
     } else {
       i18n.changeLanguage('pt-BR')
+      setCurrLanguage('pt-BR')
     }
   }
 
   const Language = () => {
-    return i18n.language === 'pt-BR' ? (
+    return currLanguage === 'pt-BR' ? (
       <>
         <BR className="w-[20px]" />
         <span className="transition md:block hidden">Português</span>

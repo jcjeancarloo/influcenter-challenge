@@ -10,7 +10,8 @@ export default  {
       users: 'Usuários',
       products: 'Produtos',
       categories: 'Categorias',
-      sales: 'Vendas'
+      sales: 'Vendas',
+      addSale: 'Adicionar venda'
     },
     overview: {
       users: 'Usuários',

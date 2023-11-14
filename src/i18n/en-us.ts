@@ -10,7 +10,8 @@ export default  {
       users: 'Users',
       products: 'Products',
       categories: 'Categories',
-      sales: 'Sales'
+      sales: 'Sales',
+      addSale: 'Add sale'
     },
     overview: {
       users: 'Users',
