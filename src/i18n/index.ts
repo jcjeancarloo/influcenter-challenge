@@ -2,7 +2,6 @@ import i18n from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 
 import enUsTranslations from "./en-us";
-// import esTranslations from "./es";
 import ptBrTranslations from "./pt-br";
 
 i18n.use(LanguageDetector).init({
@@ -13,7 +12,6 @@ i18n.use(LanguageDetector).init({
   resources: {
     "pt-BR": ptBrTranslations,
     "en-US": enUsTranslations,
-    // es: esTranslations,
   },
 });
 
