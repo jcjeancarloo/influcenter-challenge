@@ -48,10 +48,10 @@ const Table = ({ data, isUserTable, handleUpload }: TableProps) => {
       .toLowerCase()}${fromTranslate.slice(1)}`
     return (
       <div className="flex flex-row w-full items-center pb-4">
-        <div className="w-[50%]">
+        <div className="md:w-[50%] w-[30%]">
           <Title name={fromTranslate} />
         </div>
-        <div className=" w-[50%] flex flex-row justify-end">
+        <div className="md:w-[50%] w-[70%] flex flex-row justify-end">
           <Upload description={formattedButtonName} handleUpload={handleUpload} />
         </div>
       </div>

@@ -8,7 +8,7 @@ type UploadProps = {
 const Upload = ({ handleUpload, description }: UploadProps) => (
   <label
     htmlFor={`jsonFileInput-${description.split(' ')[1]}`}
-    className="bg-emerald-500 hover:bg-emerald-400 transition text-white py-2 px-4 rounded cursor-pointer flex flex-row items-center gap-x-2"
+    className="bg-emerald-500 hover:bg-emerald-400 transition text-white py-2 px-4 rounded cursor-pointer flex flex-row items-center gap-x-2 text-sm md:text-base"
   >
     <FaPlus className="text-md" />
     {description}
