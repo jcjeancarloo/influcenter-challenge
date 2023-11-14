@@ -2,9 +2,12 @@ import { DashboardContext } from '@contexts/dashboard-context'
 import usersList from '@data/users-list.json'
 import { User } from '@shared/types'
 import { useCallback, useContext, useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
+import { toast } from 'react-toastify'
 
 const useUsers = () => {
   const { users, setUsers } = useContext(DashboardContext)
+  const { t } = useTranslation()
   const fetchUsers = useCallback(async () => {
     setTimeout(() => {
       setUsers(usersList)
@@ -20,13 +23,16 @@ const useUsers = () => {
           const data = event.target.result
           const list: User[] = [...users]
           const parsed: User[] = JSON.parse(data)
+          if (!parsed[0].username)
+            return toast.error(`${t('common.invalidFile')}`, { theme: 'colored' })
           parsed.map((user) => list.push({ ...user, id: list[list.length - 1].id + 1 }))
           setUsers(list)
+          toast.success(`${t('common.successItem')}`, { theme: 'colored' })
         }
         fileReader.readAsText(file)
       }
     },
-    [setUsers, users]
+    [setUsers, t, users]
   )
 
   const totalUsers = useMemo(() => users.length, [users])

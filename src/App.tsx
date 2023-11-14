@@ -1,5 +1,7 @@
 import { Suspense, lazy, useEffect } from 'react'
 import { PuffLoader } from 'react-spinners'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 import Footer from '@components/Footer'
 import Header from '@components/Header'
@@ -59,6 +61,7 @@ function App() {
             }}
           />
           <Footer />
+          <ToastContainer />
         </Wrapper>
       </Suspense>
     </main>

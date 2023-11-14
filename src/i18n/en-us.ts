@@ -3,7 +3,9 @@ export default  {
     common: {
       exit: 'Logout',
       noData: 'No data to be displayed',
-      add: 'Add'
+      add: 'Add',
+      invalidFile: 'Invalid file',
+      successItem: 'Item added successfully'
     },
     footer: 'Proudly created by Jean Oliveira - All rights reserved © 2023',
     summary: {

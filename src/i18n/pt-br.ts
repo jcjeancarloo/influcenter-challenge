@@ -3,7 +3,9 @@ export default  {
     common: {
       exit: "Sair",
       noData: 'Nenhum dado a ser exibido',
-      add: 'Adicionar'
+      add: 'Adicionar',
+      invalidFile: 'Arquivo inválido',
+      successItem: 'Item adicionado com sucesso'
     },
     footer: 'Orgulhosamente criado por Jean Oliveira - Todos os direitos reservados © 2023',
     summary: {
