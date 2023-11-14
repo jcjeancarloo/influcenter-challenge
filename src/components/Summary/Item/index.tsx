@@ -35,7 +35,7 @@ const Item = ({
     <Card width="md:w-1/4" motionDelay={motionDelay}>
       <div className="flex flex-row gap-y-4 w-full gap-x-8 items-center">
         <div
-          className={`w-[60px] h-[60px] md:w-[80px] md:h-[80px] rounded-full flex flex-col items-center justify-center border ${
+          className={`w-[60px] h-[60px] xl:w-[80px] xl:h-[80px] rounded-full flex flex-col items-center justify-center border ${
             colors[color as keyof typeof colors]
           }`}
         >
@@ -47,7 +47,7 @@ const Item = ({
           {isSale && handleAddSale && (
             <span
               onClick={handleAddSale}
-              className="flex flex-row items-center justify-end gap-x-2 text-gray-500 hover:text-gray-200 transition cursor-pointer font-semibold md:text-sm"
+              className="flex flex-row items-center justify-end gap-x-2 text-gray-500 hover:text-gray-200 transition cursor-pointer font-semibold md:text-sm md:absolute md:right-[100px] md:top-[215px] xl:static xl:mt-1"
             >
               <FaPlus className="text-md" /> {t('summary.addSale')}
             </span>
