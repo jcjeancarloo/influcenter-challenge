@@ -15,7 +15,7 @@ O projeto foi criado atráves de lista de dados fake obtida pelo site [FakeStore
 <br>
 Lá você irá encontrar 4 arquivos, os arquivos com sufixo "list" são utilizados para a listagem padrão, já os arquivos com o prefixo "add" são utilizados como exemplo de importação de dados (criado apenas para facilitar o teste da funcionalidade).
 <br>
-Fique a vontade para criar uma lista quantos items desejar, atente-se ao padrão dos arquivos.
+Fique a vontade para criar uma lista quantos items desejar, atente-se ao padrão dos arquivos e o formato JSON.
 <br>
 <br>
 Exceto "vendas", os demais marcadores e gráficos refletem os dados reais obtidos através das listas, para criar uma interatividade nos números das vendas, foi adicionado uma funcionalidade que acionar o "Adicionar venda", é incrementado uma venda ao contador.<br><br>
