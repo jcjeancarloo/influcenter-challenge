@@ -2,7 +2,7 @@ import i18n from '@i18n/index'
 import '@testing-library/jest-dom'
 import { render } from '@testing-library/react'
 import { I18nextProvider } from 'react-i18next'
-import Table from './index'
+import Overview from './index'
 
 const mockUsers = [
   {
@@ -45,20 +45,27 @@ const mockProduct = [
   },
 ]
 
-test('Render users table', () => {
-  const { getByText } = render(
-    <I18nextProvider i18n={i18n}>
-      <Table data={mockUsers} isUserTable handleUpload={() => {}} />
-    </I18nextProvider>
-  )
-  expect(getByText('Add users')).toBeInTheDocument()
-})
+jest.mock('react-apexcharts', () => ({
+  __esModule: true,
+  default: () => <div />,
+}))
 
-test('Render product table', () => {
+test('Render overview', () => {
   const { getByText } = render(
     <I18nextProvider i18n={i18n}>
-      <Table data={mockProduct} isUserTable={false} handleUpload={() => {}} />
+      <Overview
+        users={mockUsers}
+        products={mockProduct}
+        uploadUser={() => {}}
+        uploadProduct={() => {}}
+        chartData={{
+          totalUsers: 10,
+          totalProducts: 20,
+          totalCategories: 5,
+          totalSales: 50,
+        }}
+      />
     </I18nextProvider>
   )
-  expect(getByText('Add products')).toBeInTheDocument()
+  expect(getByText('Users x Sales')).toBeInTheDocument()
 })
