@@ -32,15 +32,15 @@ function App() {
 
   return (
     <main className="flex flex-col justify-center items-center w-full min-h-screen h-full bg-[#1e1e1e] font-nunito">
-      <Suspense
-        fallback={
-          <div>
-            <PuffLoader color="white" />
-          </div>
-        }
-      >
-        <Wrapper>
-          <Header />
+      <Wrapper>
+        <Header />
+        <Suspense
+          fallback={
+            <div className="w-full h-screen flex flex-col items-center justify-center -mt-28">
+              <PuffLoader color="white" />
+            </div>
+          }
+        >
           <Summary
             totalUsers={totalUsers}
             totalProducts={totalProducts}
@@ -60,10 +60,10 @@ function App() {
               totalSales,
             }}
           />
-          <Footer />
-          <ToastContainer />
-        </Wrapper>
-      </Suspense>
+        </Suspense>
+        <Footer />
+        <ToastContainer />
+      </Wrapper>
     </main>
   )
 }
