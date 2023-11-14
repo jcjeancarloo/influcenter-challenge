@@ -6,7 +6,8 @@ Para corresponder a altura do desafio, a dashboard se baseia em dados de um poss
 
 ## Como rodar o projeto?
 
-Pelo projeto ter sido criado através do Vite basta instalar as dependencias atráves do comando `npm install` e iniciar o projeto pelo comando `npm start` <br><br>
+Pelo projeto ter sido criado através do Vite basta instalar as dependencias atráves do comando `npm install` e iniciar o projeto pelo comando `npm start`
+Para testar a aplicação basta rodar o comando `npm run test` <br><br>
 
 ## Interagindo com os dados
 
